@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Book Listings</h1>
+<p>Sell books?!?!?!?!?!?!<p>
 
 <table class="table table-striped table-bordered">
   <thead>
@@ -37,5 +38,8 @@
 <br>
 
 <% if current_user %>
+<button type="button" class"btn">
 <%= link_to 'New Listing', new_listing_path %>
+</button>
+<br><br><br><br>
 <% end %>
