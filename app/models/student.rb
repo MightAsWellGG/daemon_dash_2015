@@ -1,5 +1,6 @@
 class Student < ActiveRecord::Base
-attr_accessible :email, :name, :password
+attr_accessible :email, :name, :password, :listing_ids
+  listing_ids = Array.new
 
   validates :password, :presence => true
   validates :password, :length => { :in => 5..200}
@@ -15,6 +16,16 @@ attr_accessible :email, :name, :password
   def password=(new_password)
     @password = BCrypt::Password.create(new_password)
     self.p_hash = @password
+  end
+
+  def add_listing(email, listing)
+    @student = Student.find_by_email(email)
+    @listing = Listing.find_by_email(email)
+    if @student.email == @listing.user_email
+      @listing_ids << @listing.id
+    else
+      nil
+    end
   end
 
   def self.authenticate(email, test_password)

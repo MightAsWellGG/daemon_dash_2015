@@ -11,8 +11,6 @@ class ListingsController < ApplicationController
   # GET /listings/1
   # GET /listings/1.json
   def show
-    @listing = Listing.find(params[:id])
-    @is_listing_owner = current_listing && current_listing.id == @listing.id
   end
 
   # GET /listings/new

@@ -53,7 +53,7 @@ class StudentsController < ApplicationController
     @student = Student.new(params[:student])
 
     if @student.save
-      session[:farmer_id] = @student.id
+      session[:student_id] = @student.id
       redirect_to @student, notice: 'Student was successfully created.'
     else
       render action: "new"
