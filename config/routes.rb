@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :listings
+  resources :students
+  resources :students
+  resources :listings
   get 'welcome/index'
   root :to => "welcome#index"
   # The priority is based upon order of creation: first created -> highest priority.
