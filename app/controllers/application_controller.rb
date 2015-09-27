@@ -12,5 +12,11 @@ rescue ActiveRecord::RecordNotFound
     session[:student_id] = nil
 end
 
+def current_listing
+  @current_listing ||= Listing.find(session[:listing_id]) if session[:listing_id]
+rescue ActiveRecord::RecordNotFound
+    session[:listing_id] = nil
+end
+
 
 end

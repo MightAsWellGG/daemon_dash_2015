@@ -1,6 +1,7 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
 
+
   # GET /listings
   # GET /listings.json
   def index
@@ -10,6 +11,8 @@ class ListingsController < ApplicationController
   # GET /listings/1
   # GET /listings/1.json
   def show
+    @listing = Listing.find(params[:id])
+    @is_listing_owner = current_listing && current_listing.id == @listing.id
   end
 
   # GET /listings/new
