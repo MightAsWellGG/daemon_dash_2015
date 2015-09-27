@@ -6,11 +6,7 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
-  # App specific information
-  CLIENT_ID = 44469
-  CLIENT_SECRET = 22dfca5c5a
-  USE_STAGE = true
-  WEPAY = WePay.new(CLIENT_ID, CLIENT_SECRET, USE_STAGE)
+
 
   # Do not eager load code on boot.
   config.eager_load = false

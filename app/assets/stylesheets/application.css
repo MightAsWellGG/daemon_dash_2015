@@ -18,6 +18,16 @@
  @media (min-width: 767px) {
  body { padding-top: 60px; }
  }
+ body {
+	background-color: #EFDABD;	
+ }
+ h1 {
+ 	color: #6D1919; 
+ }
+ p {
+ 	color: #27374A;
+ }
+ 
 
  a.btn { color: #E2C7A1; }
  a.btn:visited { color: #E2C7A1; }
