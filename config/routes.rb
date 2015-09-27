@@ -1,8 +1,18 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
+  resources :students
   get 'welcome/index'
   
-  
   root :to => "welcome#index"
+  get 'register', to: 'students#new', as: :register
+
+  #session
+
+  get '/login', to: 'sessions#new', as: :login
+  get '/logout', to: 'sessions#destroy', as: :logout
+  post '/sessions/create' => 'sessions#create'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
