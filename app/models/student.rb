@@ -9,12 +9,12 @@ class Student < ActiveRecord::Base
 	validates :email, :format => { :with => /umd.edu/, :message => " is invalid, need a UMD domain (umd.edu)"}
 
 	def password
-		password ? @pw ||= BCrypt::Password.new(p_hash) : nil
+		password ? @p_hash ||= BCrypt::Password.new(password) : nil
 	end
 
 	def password=(new_password)
-		@password = BCrypt::Password.create(new_password)
-		self.password = @pw
+		@p_hash = BCrypt::Password.create(new_password)
+		self.password = @p_hash
 	end
 
 end
