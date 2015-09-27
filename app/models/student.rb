@@ -2,7 +2,7 @@ class Student < ActiveRecord::Base
 attr_accessible :email, :name, :password
 
   validates :password, :presence => true
-  validates :password, :length => { :in => 5..25}
+  validates :password, :length => { :in => 5..200}
   validates :name, :email, :presence => true
   validates :email, :uniqueness => { :case_sensitive => false }
   validates :email, :format => { :with => /@/, :message => " is invalid" }

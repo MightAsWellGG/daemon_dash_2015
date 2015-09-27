@@ -10,15 +10,26 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
+    @student = Student.find(params[:id])
+    @is_admin = current_user && current_user.id == @student.id
   end
+
+
 
   # GET /students/new
   def new
+    if current_user
+      redirect_to root_path, :notice => "You are already registered"
+    end
     @student = Student.new
   end
 
   # GET /students/1/edit
   def edit
+    @student = Student.find(params[:id])
+    if current_user.id != @student.id
+      redirect_to @student
+  end
   end
 
   # POST /students
