@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'protected_attributes'
 gem 'jquery-rails'
 gem 'bcrypt-ruby', '~> 3.0.0', :require => "bcrypt"
+gem 'wepay', '~> 0.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
