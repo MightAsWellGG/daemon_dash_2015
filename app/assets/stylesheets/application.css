@@ -9,7 +9,17 @@
  * compiled file so the styles you add here take precedence over styles defined in any styles
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
- *
+ *= require bootstrap.min
+ *= require bootstrap-responsive.min
  *= require_tree .
  *= require_self
  */
+
+ @media (min-width: 767px) {
+ body { padding-top: 60px; }
+ }
+
+ a.btn { color: #FFF; }
+ a.btn:visited { color: #FFF; }
+
+ div.navbaer div.container a { color: #EEE; }
