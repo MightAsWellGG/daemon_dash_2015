@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
   root :to => "welcome#index"
+  match 'register' => 'students#new', :as => :regis1ter
+  match 'new_listing' => 'listings#new', :as => :new_listing
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
